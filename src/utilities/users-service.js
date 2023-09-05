@@ -46,3 +46,14 @@ export function getUser() {
   const token = getToken();
   return token ? JSON.parse(atob(token.split(".")[1])).user : null;
 }
+
+export async function getUserNotes(){
+  try{
+    const res = await usersAPI.getUserNotes(); 
+    console.log(res)
+    return res.notes; 
+
+  } catch (error) {
+    throw new Error ('No Notes Found')
+  }
+}
