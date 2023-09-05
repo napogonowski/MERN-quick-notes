@@ -57,3 +57,14 @@ export async function getUserNotes(){
     throw new Error ('No Notes Found')
   }
 }
+
+export async function createNote(text){
+  try{
+    const res = await usersAPI.CreateNote ({text})
+    if (res.ok) return res.json();
+   
+  } catch (error) {
+    throw new Error("fauled it create note")
+
+  }
+}

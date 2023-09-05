@@ -1,11 +1,13 @@
 import { useState,  useEffect } from "react"
 import * as userService from '../../utilities/users-service';
 import DisplayNote from "../../components/DisplayNote/DisplayNote";
-import AddNote from "../../components/AddNote/AddNote";
+import AddNote from "../../components/AddNoteForm/AddNoteForm";
 
 
 export default function Home({user}){
   const [userNotes, setUserNotes] = useState([]); 
+
+
 
   async function hasNotes() {
       try{
@@ -26,7 +28,7 @@ export default function Home({user}){
         </div>
       : <h3>No Notes Yet</h3>
       }
-      <AddNote />
+      <AddNoteForm  />
     </div>
     </>
   )

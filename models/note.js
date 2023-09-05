@@ -7,7 +7,7 @@ const noteSchema = new Schema(
     user: { type: Schema.Types.ObjectId, required: true },
   },
   {
-    timeseries: true,
+    timestamps: true,
   }
 );
 
