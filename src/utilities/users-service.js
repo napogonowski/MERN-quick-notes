@@ -60,7 +60,7 @@ export async function getUserNotes(){
 
 export async function createNote(text){
   try{
-    const res = await usersAPI.CreateNote ({text})
+    const res = await usersAPI.createNote ({text})
     if (res.ok) return res.json();
    
   } catch (error) {
