@@ -14,9 +14,9 @@ export async function checkToken() {
 }
 
 export async function getUserNotes() {
-  return sendRequest(`${BASE_URL}/notes` )
+  return sendRequest(`${BASE_URL}/notes`);
 }
 
-export async function createNote(text){
-  return sendRequest ("api/notes", "POST", {text} )
+export async function createNote(text) {
+  return sendRequest("api/notes", "POST",  {text: text} );
 }

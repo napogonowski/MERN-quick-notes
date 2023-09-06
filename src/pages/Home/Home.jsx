@@ -1,7 +1,7 @@
 import { useState,  useEffect } from "react"
 import * as userService from '../../utilities/users-service';
 import DisplayNote from "../../components/DisplayNote/DisplayNote";
-import AddNote from "../../components/AddNoteForm/AddNoteForm";
+import AddNoteForm from "../../components/AddNoteForm/AddNoteForm";
 
 
 export default function Home({user}){

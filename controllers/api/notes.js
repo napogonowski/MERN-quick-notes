@@ -1,5 +1,3 @@
-const jwt = require("jsonwebtoken");
-const bcrypt = require("bcrypt");
 const Note = require("../../models/note");
 
 module.exports = {
@@ -8,13 +6,11 @@ module.exports = {
 
 async function createNote(req, res) {
   try {
-    const {text} = req.body;
-    const newNote = await Note.create({text}); 
-    res.json(newNote); 
-
+    const { text } = req.body;
+    console.log(text);
+    const newNote = await Note.create({ text: text, user: req.user._id });
+    res.json(newNote);
   } catch (error) {
     res.status(400).json(error);
   }
 }
-
-

@@ -47,24 +47,26 @@ export function getUser() {
   return token ? JSON.parse(atob(token.split(".")[1])).user : null;
 }
 
-export async function getUserNotes(){
-  try{
-    const res = await usersAPI.getUserNotes(); 
-    console.log(res)
-    return res.notes; 
-
+export async function getUserNotes() {
+  try {
+    const res = await usersAPI.getUserNotes();
+    console.log(res);
+    return res.notes;
   } catch (error) {
-    throw new Error ('No Notes Found')
+    throw new Error("No Notes Found");
   }
 }
 
-export async function createNote(text){
-  try{
-    const res = await usersAPI.createNote ({text})
-    if (res.ok) return res.json();
-   
+export async function createNote(text) {
+  try {
+    const res = await usersAPI.createNote(text);
+    console.log("User-service console,log", res);
+    // if (res.ok) return res.json();
+    // console.log(res.ok);
+    // console.log(res.json());
+    // dont need this shit ^^^^^^
+    return res;
   } catch (error) {
-    throw new Error("fauled it create note")
-
+    throw new Error("failed to create note");
   }
 }
